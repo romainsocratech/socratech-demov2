@@ -380,15 +380,15 @@ function lancerScan(){
     setIco(2,'done');setIco(3,'running');
     var m=compute(commits);
     setIco(3,'done');setIco(4,'running');
-    setTimeout(function(){setIco(4,'done');setIco(5,'running');},300);
-    setTimeout(function(){setIco(5,'done');setIco(6,'running');},600);
+    setTimeout(function(){setIco(4,'done');setIco(5,'running');},2000);
+    setTimeout(function(){setIco(5,'done');setIco(6,'running');},4000);
     setTimeout(function(){
       setIco(6,'done');
       document.getElementById('loader').style.display='none';
       document.getElementById('results').style.display='block';
       render(repo,m);
       document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
-    },900);
+    },6000);
   })
   .catch(function(e){
     document.getElementById('loader').style.display='none';
