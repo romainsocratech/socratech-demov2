@@ -7,11 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0d1b35;--navy-mid:#162d52;--blue:#1c3d6e;--gold:#a8812a;--gold-light:#c9a84c;--gray-50:#f8f9fb;--gray-100:#f0f2f6;--gray-200:#e2e6ed;--gray-400:#8e96a8;--gray-600:#525d72;--white:#ffffff;--risk-high:#a82828;--risk-med:#b06020;--risk-low:#2a7a4a;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65;}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:0 72px;height:68px;display:flex;align-items:center;justify-content:space-between;}
 .logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:12px;}
 .logo-mark{width:26px;height:26px;background:var(--navy);display:flex;align-items:center;justify-content:center;}
@@ -22,8 +19,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .nav-link:hover{color:var(--navy);}
 .btn-nav{font-size:12px;font-weight:500;background:var(--navy);color:var(--white);padding:12px 26px;text-decoration:none;letter-spacing:0.09em;text-transform:uppercase;transition:background 0.2s;border:none;font-family:'DM Sans',sans-serif;cursor:pointer;}
 .btn-nav:hover{background:var(--blue);}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 72px 80px;background:var(--gray-50);text-align:center;}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:14px;justify-content:center;}
 .eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold);}
@@ -32,29 +27,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .hero-rule{width:48px;height:2px;background:var(--gold);margin:32px auto;}
 .hero-sub{font-size:18px;font-weight:300;color:var(--gray-600);line-height:1.75;max-width:560px;margin:0 auto 56px;}
 .hero-sub strong{font-weight:500;color:var(--navy);}
-
-/* INPUT */
 .scan-box{width:100%;max-width:620px;margin:0 auto;}
 .scan-row{display:flex;border:1.5px solid var(--navy);background:var(--white);}
 .scan-row input{flex:1;padding:18px 24px;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy);background:transparent;}
 .scan-row input::placeholder{color:var(--gray-400);}
 .scan-row button{background:var(--navy);color:var(--white);border:none;padding:18px 32px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;white-space:nowrap;}
 .scan-row button:hover{background:var(--blue);}
-.scan-note{margin-top:14px;font-size:12px;color:var(--gray-400);letter-spacing:0.03em;}
-.error-box{display:none;margin-top:20px;padding:16px 24px;background:rgba(168,40,40,0.05);border:1px solid rgba(168,40,40,0.2);color:var(--risk-high);font-size:13px;max-width:620px;width:100%;}
-
-/* LOADER */
+.scan-note{margin-top:14px;font-size:12px;color:var(--gray-400);}
+.error-box{display:none;margin-top:20px;padding:16px 24px;background:rgba(168,40,40,0.05);border:1px solid rgba(168,40,40,0.2);color:var(--risk-high);font-size:13px;max-width:620px;width:100%;text-align:left;}
 .loader{display:none;margin-top:48px;padding:40px;background:var(--white);border:1px solid var(--gray-200);max-width:620px;width:100%;text-align:left;}
 .loader-title{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:500;}
 .loader-step{display:flex;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--gray-100);font-size:13px;color:var(--gray-600);font-weight:300;}
 .loader-step:first-of-type{border-top:none;}
-.step-ico{width:18px;height:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all 0.3s;}
+.step-ico{width:18px;height:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;}
 .step-ico.wait{color:var(--gray-200);}
 .step-ico.running{color:var(--gold);animation:spin 0.8s linear infinite;}
 .step-ico.done{color:var(--risk-low);}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-/* RESULTS */
 .results{display:none;margin-top:48px;max-width:700px;width:100%;}
 .result-card{background:var(--white);border:1px solid var(--gray-200);}
 .result-header{padding:36px 40px;border-bottom:1px solid var(--gray-200);display:flex;justify-content:space-between;align-items:flex-start;}
@@ -66,7 +55,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .badge-high{border-color:var(--risk-high);color:var(--risk-high);background:rgba(168,40,40,0.05);}
 .badge-med{border-color:var(--risk-med);color:var(--risk-med);background:rgba(176,96,32,0.05);}
 .badge-ok{border-color:var(--risk-low);color:var(--risk-low);background:rgba(42,122,74,0.05);}
-
 .r-metrics{padding:0 40px;}
 .r-metric{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--gray-100);}
 .r-metric:last-child{border-bottom:none;}
@@ -75,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .r-m-detail{font-size:12px;color:var(--gray-400);font-weight:300;}
 .r-m-right{display:flex;align-items:center;gap:14px;}
 .r-bar-wrap{width:90px;height:3px;background:var(--gray-100);}
-.r-bar{height:100%;transition:width 1s ease;}
+.r-bar{height:100%;}
 .bar-h{background:var(--risk-high);}
 .bar-m{background:var(--risk-med);}
 .bar-o{background:var(--risk-low);}
@@ -83,31 +71,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .tag-h{color:var(--risk-high);}
 .tag-m{color:var(--risk-med);}
 .tag-o{color:var(--risk-low);}
-
 .r-authors{padding:24px 40px;border-top:1px solid var(--gray-100);}
 .r-auth-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-400);font-weight:500;margin-bottom:14px;}
 .r-auth-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid var(--gray-100);font-size:13px;}
 .r-auth-name{color:var(--navy);font-weight:400;}
 .r-auth-pct{color:var(--gray-400);font-weight:300;font-size:12px;}
-
-/* BLUR */
 .blur-zone{margin:0 40px 40px;position:relative;border:1px solid var(--gray-200);margin-top:24px;}
 .blur-inner{padding:24px;filter:blur(6px);user-select:none;pointer-events:none;}
 .blur-line{height:10px;background:var(--gray-100);margin-bottom:10px;border-radius:1px;}
 .blur-line:nth-child(2){width:74%;}.blur-line:nth-child(3){width:88%;}.blur-line:nth-child(4){width:61%;}.blur-line:nth-child(5){width:79%;}
-.blur-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(248,249,251,0.9);backdrop-filter:blur(1px);}
+.blur-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(248,249,251,0.9);}
 .blur-label{font-size:12px;color:var(--gray-600);letter-spacing:0.08em;text-transform:uppercase;}
-.btn-unlock{font-size:12px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--white);background:var(--navy);padding:13px 28px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
-.btn-unlock:hover{background:var(--blue);}
-
-/* STATS */
+.btn-unlock{font-size:12px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--white);background:var(--navy);padding:13px 28px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .stats-bar{background:var(--navy);padding:28px 72px;display:flex;align-items:center;}
 .stat{flex:1;display:flex;flex-direction:column;gap:4px;padding:0 40px;border-right:1px solid rgba(255,255,255,0.1);}
 .stat:first-child{padding-left:0;}.stat:last-child{border-right:none;}
 .stat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--gold-light);}
 .stat-l{font-size:11px;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.1em;}
-
-/* CONSTAT */
 .constat{padding:110px 72px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;background:var(--white);}
 .section-tag{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:14px;}
 .section-tag::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
@@ -124,8 +104,6 @@ h2 em{font-style:italic;}
 .quote-mark{font-family:'Playfair Display',serif;font-size:120px;color:var(--gray-200);position:absolute;top:10px;left:28px;line-height:1;user-select:none;}
 .quote-text{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--navy);line-height:1.55;position:relative;z-index:1;margin-bottom:24px;}
 .quote-source{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);}
-
-/* FEATURES */
 .features{padding:110px 72px;background:var(--gray-50);}
 .features-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:64px;align-items:end;}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-200);border:2px solid var(--gray-200);}
@@ -137,8 +115,6 @@ h2 em{font-style:italic;}
 .feat-num{font-family:'Playfair Display',serif;font-size:28px;color:var(--gray-200);margin-bottom:20px;display:block;transition:color 0.25s;}
 .feat-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:10px;transition:color 0.25s;}
 .feat-desc{font-size:14px;font-weight:300;color:var(--gray-600);line-height:1.65;transition:color 0.25s;}
-
-/* CRED */
 .credibility{padding:110px 72px;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
 .cred-left .section-tag{color:rgba(201,168,76,0.7);}
 .cred-left .section-tag::before{background:rgba(201,168,76,0.4);}
@@ -150,8 +126,6 @@ h2 em{font-style:italic;}
 .cred-icon{width:40px;height:40px;flex-shrink:0;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:14px;}
 .cred-body strong{display:block;font-size:15px;font-weight:500;color:var(--white);margin-bottom:6px;}
 .cred-body p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.65;}
-
-/* CONTACT */
 .contact-section{padding:110px 72px;background:var(--gray-50);display:flex;flex-direction:column;align-items:center;text-align:center;}
 .contact-section .section-tag{justify-content:center;}
 .contact-section .section-tag::before{display:none;}
@@ -166,32 +140,17 @@ h2 em{font-style:italic;}
 .btn-submit:hover{background:var(--blue);}
 .form-note{margin-top:14px;font-size:12px;color:var(--gray-400);}
 .form-ok{display:none;padding:32px;background:var(--white);border:1px solid var(--gray-200);font-size:15px;color:var(--navy);font-weight:300;}
-.form-ok strong{font-weight:500;}
-
-/* FOOTER */
 footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.08);}
 .f-logo{font-family:'Playfair Display',serif;font-size:15px;color:rgba(255,255,255,0.5);}
 .f-logo em{color:var(--gold);font-style:normal;}
 .f-copy{font-size:12px;color:rgba(255,255,255,0.25);}
 .f-links{display:flex;gap:28px;}
-.f-links a{font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.07em;transition:color 0.2s;}
+.f-links a{font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
 .f-links a:hover{color:rgba(255,255,255,0.6);}
-
-@media(max-width:900px){
-  nav{padding:0 24px;}
-  .nav-right .nav-link{display:none;}
-  .hero{padding:100px 24px 60px;}
-  .stats-bar{padding:20px 24px;flex-wrap:wrap;}
-  .stat{padding:10px 16px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
-  .constat,.features-head,.credibility{grid-template-columns:1fr;gap:48px;}
-  .constat,.features,.credibility,.contact-section{padding:72px 24px;}
-  .feat-grid{grid-template-columns:1fr;}
-  footer{flex-direction:column;gap:16px;padding:32px 24px;text-align:center;}
-}
+@media(max-width:900px){nav{padding:0 24px;}.nav-right .nav-link{display:none;}.hero{padding:100px 24px 60px;}.stats-bar{padding:20px 24px;flex-wrap:wrap;}.stat{padding:10px 16px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}.constat,.features-head,.credibility{grid-template-columns:1fr;gap:48px;}.constat,.features,.credibility,.contact-section{padding:72px 24px;}.feat-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:16px;padding:32px 24px;text-align:center;}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="#" class="logo"><div class="logo-mark"><i></i></div><span>Run <em>Risk</em></span></a>
   <div class="nav-right">
@@ -207,27 +166,23 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
   <h1>On voit le code.<br><span class="it">Le système, lui, est invisible.</span></h1>
   <div class="hero-rule"></div>
   <p class="hero-sub">Run Risk révèle les fragilités invisibles de votre production <strong>avant qu'elles ne deviennent des incidents.</strong></p>
-
   <div class="scan-box">
     <div class="scan-row">
-      <input type="text" id="repoUrl" placeholder="github.com/organisation/repository" autocomplete="off">
-      <button onclick="lancerScan()">Analyser</button>
+      <input type="text" id="repoUrl" placeholder="https://github.com/organisation/repository">
+      <button id="scanBtn">Analyser</button>
     </div>
     <p class="scan-note">Analyse basée sur l'historique Git réel · Aucun accès production requis</p>
   </div>
-
   <div class="error-box" id="errorBox"></div>
-
   <div class="loader" id="loader">
     <div class="loader-title">Analyse en cours</div>
     <div class="loader-step"><div class="step-ico wait" id="ico1">○</div><span>Lecture du repository Git</span></div>
     <div class="loader-step"><div class="step-ico wait" id="ico2">○</div><span>Extraction des commits horodatés</span></div>
     <div class="loader-step"><div class="step-ico wait" id="ico3">○</div><span>Calcul du bus factor et concentration du savoir</span></div>
     <div class="loader-step"><div class="step-ico wait" id="ico4">○</div><span>Identification des zones de fragilité</span></div>
-    <div class="loader-step"><div class="step-ico wait" id="ico5">○</div><span>Mesure du code churn et activité critique</span></div>
+    <div class="loader-step"><div class="step-ico wait" id="ico5">○</div><span>Mesure du code churn</span></div>
     <div class="loader-step"><div class="step-ico wait" id="ico6">○</div><span>Génération du score RUN Risk</span></div>
   </div>
-
   <div class="results" id="results">
     <div class="result-card">
       <div class="result-header">
@@ -243,13 +198,10 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
       <div class="r-metrics" id="resMetrics"></div>
       <div class="r-authors" id="resAuthors"></div>
       <div class="blur-zone">
-        <div class="blur-inner">
-          <div class="blur-line"></div><div class="blur-line"></div>
-          <div class="blur-line"></div><div class="blur-line"></div><div class="blur-line"></div>
-        </div>
+        <div class="blur-inner"><div class="blur-line"></div><div class="blur-line"></div><div class="blur-line"></div><div class="blur-line"></div><div class="blur-line"></div></div>
         <div class="blur-overlay">
           <span class="blur-label">🔒 Recommandations complètes</span>
-          <button class="btn-unlock" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Accéder à l'analyse complète</button>
+          <button class="btn-unlock" id="unlockBtn">Accéder à l'analyse complète</button>
         </div>
       </div>
     </div>
@@ -269,7 +221,7 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
     <h2>Un système peut fonctionner<br><em>et dériver en silence.</em></h2>
     <p class="intro-txt">La plupart des fragilités du RUN ne déclenchent aucune alerte. Elles s'accumulent, invisibles, jusqu'au jour où elles deviennent critiques.</p>
     <div class="risk-items">
-      <div class="risk-item"><span class="risk-num">01</span><div class="risk-body"><strong>Dépendance à une personne</strong><p>Un ou deux développeurs concentrent 60 % des commits. Un départ, un arrêt — et les opérations s'arrêtent.</p></div></div>
+      <div class="risk-item"><span class="risk-num">01</span><div class="risk-body"><strong>Dépendance à une personne</strong><p>Un ou deux développeurs concentrent 60% des commits. Un départ, un arrêt — et les opérations s'arrêtent.</p></div></div>
       <div class="risk-item"><span class="risk-num">02</span><div class="risk-body"><strong>Savoir non documenté</strong><p>La connaissance critique vit dans les têtes, pas dans la documentation. Elle n'est ni transmissible, ni auditable.</p></div></div>
       <div class="risk-item"><span class="risk-num">03</span><div class="risk-body"><strong>Mises en production risquées</strong><p>Des hotspots modifiés en urgence, des correctifs empilés — chaque MEP augmente la probabilité d'incident.</p></div></div>
       <div class="risk-item"><span class="risk-num">04</span><div class="risk-body"><strong>Incidents récurrents non traités</strong><p>Les signaux faibles existent dans l'historique Git. Ils ne sont pas lus. Run Risk les rend objectifs et mesurables.</p></div></div>
@@ -316,16 +268,10 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
   <h2>Obtenez votre diagnostic<br><em>en 2 minutes.</em></h2>
   <p class="intro-txt">Transmettez l'URL de votre repository Git. Nous analysons l'historique des commits et vous restituons un score RUN Risk accompagné de recommandations actionnables.</p>
   <div class="c-form" id="cForm">
-    <div class="c-row" style="margin-bottom:1px;">
-      <input type="text" class="c-field" id="fPrenom" placeholder="Prénom">
-      <input type="text" class="c-field" id="fNom" placeholder="Nom">
-    </div>
-    <div class="c-row" style="margin-bottom:1px;">
-      <input type="email" class="c-field" id="fEmail" placeholder="Email professionnel">
-      <input type="text" class="c-field" id="fOrga" placeholder="Organisation">
-    </div>
+    <div class="c-row" style="margin-bottom:1px;"><input type="text" class="c-field" id="fPrenom" placeholder="Prénom"><input type="text" class="c-field" id="fNom" placeholder="Nom"></div>
+    <div class="c-row" style="margin-bottom:1px;"><input type="email" class="c-field" id="fEmail" placeholder="Email professionnel"><input type="text" class="c-field" id="fOrga" placeholder="Organisation"></div>
     <input type="text" class="c-field" id="fRepo2" placeholder="URL du repository Git" style="margin-bottom:1px;">
-    <button class="btn-submit" onclick="envoyerContact()">Envoyer la demande d'analyse →</button>
+    <button class="btn-submit" id="submitBtn">Envoyer la demande d'analyse →</button>
     <p class="form-note">🔒 Données utilisées uniquement pour l'analyse · 231 rue Saint-Honoré, Paris 75001</p>
   </div>
   <div class="form-ok" id="formOk"><p>✓ &nbsp;<strong>Message envoyé.</strong> Romain Brubach vous répondra sous 24h ouvrées.</p></div>
@@ -334,120 +280,132 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
 <footer>
   <span class="f-logo">Run <em>Risk</em> · Socratech</span>
   <span class="f-copy">© 2026 Socratech · Paris · 231 rue Saint-Honoré 75001</span>
-  <div class="f-links">
-    <a href="/cdn-cgi/l/email-protection#b7c5d8dad6ded9d5c5c2d5d6d4dff7c4d8d4c5d6c3d2d4df99d1c5"><span class="__cf_email__" data-cfemail="0f7d60626e66616d7d7a6d6e6c674f7c606c7d6e7b6a6c6721697d">[email&#160;protected]</span></a>
-    <a href="tel:+33646382105">06 46 38 21 05</a>
-  </div>
+  <div class="f-links"><a href="mailto:romainbrubach@socratech.fr">romainbrubach@socratech.fr</a><a href="tel:+33646382105">06 46 38 21 05</a></div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function parseRepo(v) {
-  v = v.trim().replace(/\/$/, '').replace(/^https?:\/\//, '');
-  const m = v.match(/github\.com\/([^\/\s?#]+\/[^\/\s?#]+)/);
-  if (m) return m[1];
-  if (/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(v)) return v;
+<script>
+function parseRepo(v){
+  v=v.trim().replace(/\/$/,'').replace(/^https?:\/\//,'');
+  var m=v.match(/github\.com\/([^\/\s?#]+\/[^\/\s?#]+)/);
+  if(m)return m[1];
+  if(/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(v))return v;
   return null;
 }
-function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
-function setIco(n, s) {
-  const el = document.getElementById('ico' + n);
-  el.className = 'step-ico ' + s;
-  el.textContent = s === 'done' ? '✓' : s === 'running' ? '↻' : '○';
+function delay(ms){return new Promise(function(r){setTimeout(r,ms);});}
+function setIco(n,s){
+  var el=document.getElementById('ico'+n);
+  el.className='step-ico '+s;
+  el.textContent=s==='done'?'✓':s==='running'?'↻':'○';
 }
-async function fetchGH(path) { // fixed
-  const r = await fetch('https://api.github.com/' + path, {
-    headers: {
-      Accept: 'application/vnd.github.v3+json',
-
+function fetchGH(path){
+  return fetch('https://api.github.com/'+path,{
+    headers:{Accept:'application/vnd.github.v3+json'}
+  }).then(function(r){
+    if(r.status===403)throw new Error('Limite API atteinte. Réessayez dans quelques minutes.');
+    if(r.status===404)throw new Error('Repository introuvable. Vérifiez l\'URL.');
+    if(!r.ok)throw new Error('Erreur '+r.status);
+    return r.json();
+  });
+}
+function compute(commits){
+  var authors={},night=0;
+  commits.forEach(function(c){
+    var a=c.commit&&c.commit.author&&c.commit.author.name?c.commit.author.name:'Inconnu';
+    authors[a]=(authors[a]||0)+1;
+    if(c.commit&&c.commit.author&&c.commit.author.date){
+      var d=new Date(c.commit.author.date),h=d.getUTCHours(),day=d.getUTCDay();
+      if(h<7||h>=21||day===0||day===6)night++;
     }
   });
-  if (r.status === 403) throw new Error('Limite API. Réessayez dans quelques minutes.');
-  if (r.status === 404) throw new Error('Repository introuvable.');
-  if (!r.ok) throw new Error('Erreur ' + r.status);
-  return r.json();
+  var total=commits.length;
+  var sorted=Object.entries(authors).sort(function(a,b){return b[1]-a[1];});
+  var top1pct=(sorted[0]?sorted[0][1]:0)/total;
+  var bf=0,cum=0;
+  for(var i=0;i<sorted.length;i++){cum+=sorted[i][1];bf++;if(cum/total>=0.5)break;}
+  var nightPct=night/total;
+  var score=10;
+  if(bf<=1)score-=3;else if(bf<=2)score-=1.5;
+  if(top1pct>0.7)score-=2;else if(top1pct>0.5)score-=1;
+  if(nightPct>0.3)score-=1.5;else if(nightPct>0.15)score-=0.7;
+  score=Math.max(1.5,Math.min(10,score));
+  return{total:total,bf:bf,top1pct:top1pct,nightPct:nightPct,score:Math.round(score*10)/10,authors:sorted.slice(0,4)};
 }
-function compute(commits) {
-  const authors = {};
-  let night = 0;
-  commits.forEach(c => {
-    const a = c.commit?.author?.name || 'Inconnu';
-    authors[a] = (authors[a] || 0) + 1;
-    const d = new Date(c.commit?.author?.date);
-    const h = d.getUTCHours(), day = d.getUTCDay();
-    if (h < 7 || h >= 21 || day === 0 || day === 6) night++;
-  });
-  const total = commits.length;
-  const sorted = Object.entries(authors).sort((a,b) => b[1]-a[1]);
-  const top1pct = (sorted[0]?.[1] || 0) / total;
-  let bf = 0, cum = 0;
-  for (const [,v] of sorted) { cum += v; bf++; if (cum / total >= 0.5) break; }
-  const nightPct = night / total;
-  let score = 10;
-  if (bf <= 1) score -= 3; else if (bf <= 2) score -= 1.5;
-  if (top1pct > 0.7) score -= 2; else if (top1pct > 0.5) score -= 1;
-  if (nightPct > 0.3) score -= 1.5; else if (nightPct > 0.15) score -= 0.7;
-  score = Math.max(1.5, Math.min(10, score));
-  return { total, bf, top1pct, nightPct, score: Math.round(score * 10) / 10, authors: sorted.slice(0, 4) };
+function renderMetric(name,detail,barClass,barW,tagClass,tagTxt){
+  return '<div class="r-metric"><div class="r-m-left"><span class="r-m-name">'+name+'</span><span class="r-m-detail">'+detail+'</span></div><div class="r-m-right"><div class="r-bar-wrap"><div class="r-bar '+barClass+'" style="width:'+barW+'%"></div></div><span class="r-tag '+tagClass+'">'+tagTxt+'</span></div></div>';
 }
-function renderMetric(name, detail, barClass, barW, tagClass, tagTxt) {
-  return `<div class="r-metric"><div class="r-m-left"><span class="r-m-name">${name}</span><span class="r-m-detail">${detail}</span></div><div class="r-m-right"><div class="r-bar-wrap"><div class="r-bar ${barClass}" style="width:${barW}%"></div></div><span class="r-tag ${tagClass}">${tagTxt}</span></div></div>`;
+function render(repo,m){
+  document.getElementById('resRepo').textContent=repo;
+  document.getElementById('resScore').textContent=m.score.toFixed(1);
+  var badge=document.getElementById('resBadge');
+  if(m.score>=7){badge.textContent='Risque faible';badge.className='result-badge badge-ok';}
+  else if(m.score>=5){badge.textContent='Risque modéré';badge.className='result-badge badge-med';}
+  else{badge.textContent='Risque élevé';badge.className='result-badge badge-high';}
+  var bfL=m.bf<=1?'Critique':m.bf<=2?'Élevé':'Modéré';
+  var bfC=m.bf<=1?['bar-h','tag-h']:m.bf<=2?['bar-m','tag-m']:['bar-o','tag-o'];
+  var bfW=m.bf<=1?90:m.bf<=2?65:35;
+  var cL=m.top1pct>0.7?'Élevée':m.top1pct>0.5?'Modérée':'Correcte';
+  var cC=m.top1pct>0.7?['bar-h','tag-h']:m.top1pct>0.5?['bar-m','tag-m']:['bar-o','tag-o'];
+  var nL=m.nightPct>0.3?'Élevée':m.nightPct>0.15?'Modérée':'Faible';
+  var nC=m.nightPct>0.3?['bar-h','tag-h']:m.nightPct>0.15?['bar-m','tag-m']:['bar-o','tag-o'];
+  document.getElementById('resMetrics').innerHTML=
+    renderMetric('Bus factor',m.bf+' développeur'+(m.bf>1?'s':'')+' concentre'+(m.bf===1?'':'nt')+' 50% des commits',bfC[0],bfW,bfC[1],bfL)+
+    renderMetric('Concentration du savoir',Math.round(m.top1pct*100)+'% des commits par un seul auteur',cC[0],Math.round(m.top1pct*100),cC[1],cL)+
+    renderMetric('Activité nuit / week-end',Math.round(m.nightPct*100)+'% des commits hors heures ouvrées',nC[0],Math.round(m.nightPct*100),nC[1],nL)+
+    renderMetric('Volume analysé',m.total+' commits analysés','bar-o',40,'tag-o',m.total+' commits');
+  document.getElementById('resAuthors').innerHTML='<p class="r-auth-title">Contributeurs principaux</p>'+
+    m.authors.map(function(a){return '<div class="r-auth-row"><span class="r-auth-name">'+a[0]+'</span><span class="r-auth-pct">'+a[1]+' commits · '+Math.round(a[1]/m.total*100)+'%</span></div>';}).join('');
 }
-function render(repo, m) {
-  document.getElementById('resRepo').textContent = repo;
-  document.getElementById('resScore').textContent = m.score.toFixed(1);
-  const badge = document.getElementById('resBadge');
-  if (m.score >= 7) { badge.textContent = 'Risque faible'; badge.className = 'result-badge badge-ok'; }
-  else if (m.score >= 5) { badge.textContent = 'Risque modéré'; badge.className = 'result-badge badge-med'; }
-  else { badge.textContent = 'Risque élevé'; badge.className = 'result-badge badge-high'; }
-
-  const bfL = m.bf <= 1 ? 'Critique' : m.bf <= 2 ? 'Élevé' : 'Modéré';
-  const bfC = m.bf <= 1 ? ['bar-h','tag-h'] : m.bf <= 2 ? ['bar-m','tag-m'] : ['bar-o','tag-o'];
-  const bfW = m.bf <= 1 ? 90 : m.bf <= 2 ? 65 : 35;
-  const cL = m.top1pct > 0.7 ? 'Élevée' : m.top1pct > 0.5 ? 'Modérée' : 'Correcte';
-  const cC = m.top1pct > 0.7 ? ['bar-h','tag-h'] : m.top1pct > 0.5 ? ['bar-m','tag-m'] : ['bar-o','tag-o'];
-  const nL = m.nightPct > 0.3 ? 'Élevée' : m.nightPct > 0.15 ? 'Modérée' : 'Faible';
-  const nC = m.nightPct > 0.3 ? ['bar-h','tag-h'] : m.nightPct > 0.15 ? ['bar-m','tag-m'] : ['bar-o','tag-o'];
-
-  document.getElementById('resMetrics').innerHTML =
-    renderMetric('Bus factor', `${m.bf} développeur${m.bf > 1 ? 's' : ''} concentre${m.bf === 1 ? '' : 'nt'} 50% des commits`, bfC[0], bfW, bfC[1], bfL) +
-    renderMetric('Concentration du savoir', `${Math.round(m.top1pct * 100)}% des commits par un seul auteur`, cC[0], Math.round(m.top1pct * 100), cC[1], cL) +
-    renderMetric('Activité nuit / week-end', `${Math.round(m.nightPct * 100)}% des commits hors heures ouvrées`, nC[0], Math.round(m.nightPct * 100), nC[1], nL) +
-    renderMetric('Volume analysé', `${m.total} commits · ${m.authors.length} contributeurs`, 'bar-o', 40, 'tag-o', m.total + ' commits');
-
-  document.getElementById('resAuthors').innerHTML =
-    '<p class="r-auth-title">Contributeurs principaux</p>' +
-    m.authors.map(([n,v]) => `<div class="r-auth-row"><span class="r-auth-name">${n}</span><span class="r-auth-pct">${v} commits · ${Math.round(v/m.total*100)}%</span></div>`).join('');
-}
-async function lancerScan() {
-  const err = document.getElementById('errorBox');
-  err.style.display = 'none';
-  const repo = parseRepo(document.getElementById('repoUrl').value);
-  if (!repo) { err.textContent = 'URL invalide. Format attendu : github.com/organisation/repository'; err.style.display = 'block'; return; }
-  document.getElementById('loader').style.display = 'block';
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('loader').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  for (let i = 1; i <= 6; i++) setIco(i, 'wait');
-  try {
-    setIco(1, 'running'); await delay(500); await fetchGH('repos/' + repo); setIco(1, 'done');
-    setIco(2, 'running'); await delay(600);
-    const commits = await fetchGH('repos/' + repo + '/commits?per_page=100');
-    setIco(2, 'done');
-    setIco(3, 'running'); await delay(700); const m = compute(commits); setIco(3, 'done');
-    setIco(4, 'running'); await delay(500); setIco(4, 'done');
-    setIco(5, 'running'); await delay(500); setIco(5, 'done');
-    setIco(6, 'running'); await delay(600); setIco(6, 'done');
-    await delay(300);
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('results').style.display = 'block';
-    render(repo, m);
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } catch(e) {
-    document.getElementById('loader').style.display = 'none';
-    err.textContent = 'Impossible d\'analyser ce repository. Vérifiez que l\'URL est correcte et que le dépôt est public.';
-    err.style.display = 'block';
-    for (let i = 1; i <= 6; i++) setIco(i, 'wait');
+function lancerScan(){
+  var err=document.getElementById('errorBox');
+  err.style.display='none';
+  var val=document.getElementById('repoUrl').value;
+  var repo=parseRepo(val);
+  if(!repo){
+    err.textContent='URL invalide. Exemple : https://github.com/facebook/react';
+    err.style.display='block';
+    return;
   }
+  document.getElementById('loader').style.display='block';
+  document.getElementById('results').style.display='none';
+  document.getElementById('loader').scrollIntoView({behavior:'smooth',block:'center'});
+  for(var i=1;i<=6;i++)setIco(i,'wait');
+  setIco(1,'running');
+  fetchGH('repos/'+repo)
+  .then(function(){
+    setIco(1,'done');setIco(2,'running');
+    return fetchGH('repos/'+repo+'/commits?per_page=100');
+  })
+  .then(function(commits){
+    setIco(2,'done');setIco(3,'running');
+    var m=compute(commits);
+    setIco(3,'done');setIco(4,'running');
+    setTimeout(function(){setIco(4,'done');setIco(5,'running');},300);
+    setTimeout(function(){setIco(5,'done');setIco(6,'running');},600);
+    setTimeout(function(){
+      setIco(6,'done');
+      document.getElementById('loader').style.display='none';
+      document.getElementById('results').style.display='block';
+      render(repo,m);
+      document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    },900);
+  })
+  .catch(function(e){
+    document.getElementById('loader').style.display='none';
+    err.textContent=e.message||'Erreur lors de l\'analyse. Vérifiez l\'URL et réessayez.';
+    err.style.display='block';
+    for(var i=1;i<=6;i++)setIco(i,'wait');
+  });
 }
-function envoyerContact() {
-  if (!document.getElementById('fPrenom').value || !document.getElementById('fEmail').value) { alert('Veuillez renseigner au minimum votre prénom et votre email.'); return; }
-  document.getElemen
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('scanBtn').addEventListener('click',lancerScan);
+  document.getElementById('repoUrl').addEventListener('keydown',function(e){if(e.key==='Enter')lancerScan();});
+  document.getElementById('unlockBtn').addEventListener('click',function(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});});
+  document.getElementById('submitBtn').addEventListener('click',function(){
+    if(!document.getElementById('fPrenom').value||!document.getElementById('fEmail').value){alert('Veuillez renseigner au minimum votre prénom et votre email.');return;}
+    document.getElementById('cForm').style.display='none';
+    document.getElementById('formOk').style.display='block';
+  });
+});
+</script>
+</body>
+</html>
