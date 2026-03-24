@@ -401,5 +401,11 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('scanBtn').addEventListener('click',lancerScan);
   document.getElementById('repoUrl').addEventListener('keydown',function(e){if(e.key==='Enter')lancerScan();});
   document.getElementById('unlockBtn').addEventListener('click',function(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});});
-  document.getElementById('submitBtn').addEventListener('click',function(){
-    if(!document.getElementById('fPrenom').value||!document.getElement
+  // form submits natively via Formspree
+  // document.getElementById('submitBtn').addEventListener('click',function(){
+    if(!document.getElementById('fPrenom').value||!document.getElementById('fEmail').value){alert('Veuillez renseigner au minimum votre prénom et votre email.');return;}
+  // });
+});
+</script>
+</body>
+</html>
