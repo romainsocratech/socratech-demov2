@@ -168,7 +168,7 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
   <p class="hero-sub">Run Risk révèle les fragilités invisibles de votre production <strong>avant qu'elles ne deviennent des incidents.</strong></p>
   <div class="scan-box">
     <div class="scan-row">
-      <input type="text" id="repoUrl" placeholder="https://github.com/organisation/repository">
+      <input type="text" id="repoUrl" placeholder="Repository Legacy (ibmi/AS400), open system ou cloud">
       <button id="scanBtn">Analyser</button>
     </div>
     <p class="scan-note">Analyse basée sur l'historique Git réel · Aucun accès production requis</p>
@@ -267,12 +267,13 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
   <div class="section-tag">Analyser mon RUN</div>
   <h2>Obtenez votre diagnostic<br><em>en 2 minutes.</em></h2>
   <p class="intro-txt">Transmettez l'URL de votre repository Git. Nous analysons l'historique des commits et vous restituons un score RUN Risk accompagné de recommandations actionnables.</p>
-  <div class="c-form" id="cForm">
-    <div class="c-row" style="margin-bottom:1px;"><input type="text" class="c-field" id="fPrenom" placeholder="Prénom"><input type="text" class="c-field" id="fNom" placeholder="Nom"></div>
-    <div class="c-row" style="margin-bottom:1px;"><input type="email" class="c-field" id="fEmail" placeholder="Email professionnel"><input type="text" class="c-field" id="fOrga" placeholder="Organisation"></div>
-    <input type="text" class="c-field" id="fRepo2" placeholder="URL du repository Git" style="margin-bottom:1px;">
-    <button class="btn-submit" id="submitBtn">Envoyer la demande d'analyse →</button>
+  <form class="c-form" id="cForm" action="https://formspree.io/f/mdaugegl" method="POST">
+    <div class="c-row" style="margin-bottom:1px;"><input type="text" class="c-field" id="fPrenom" name="prenom" placeholder="Prénom"><input type="text" class="c-field" id="fNom" name="nom" placeholder="Nom"></div>
+    <div class="c-row" style="margin-bottom:1px;"><input type="email" class="c-field" id="fEmail" name="email" placeholder="Email professionnel"><input type="text" class="c-field" id="fOrga" name="organisation" placeholder="Organisation"></div>
+    <input type="text" class="c-field" id="fRepo2" name="repository" placeholder="Entrez votre repository Legacy (ibmi/AS400), open system ou cloud" style="margin-bottom:1px;">
+    <button class="btn-submit" type="submit">Envoyer la demande d'analyse →</button>
     <p class="form-note">🔒 Données utilisées uniquement pour l'analyse · 231 rue Saint-Honoré, Paris 75001</p>
+  </form>
   </div>
   <div class="form-ok" id="formOk"><p>✓ &nbsp;<strong>Message envoyé.</strong> Romain Brubach vous répondra sous 24h ouvrées.</p></div>
 </section>
@@ -280,10 +281,10 @@ footer{background:var(--navy);padding:36px 72px;display:flex;justify-content:spa
 <footer>
   <span class="f-logo">Run <em>Risk</em> · Socratech</span>
   <span class="f-copy">© 2026 Socratech · Paris · 231 rue Saint-Honoré 75001</span>
-  <div class="f-links"><a href="mailto:romainbrubach@socratech.fr">romainbrubach@socratech.fr</a><a href="tel:+33646382105">06 46 38 21 05</a></div>
+  <div class="f-links"><a href="/cdn-cgi/l/email-protection#4735282a262e292535322526242f0734282435263322242f692135"><span class="__cf_email__" data-cfemail="b4c6dbd9d5dddad6c6c1d6d5d7dcf4c7dbd7c6d5c0d1d7dc9ad2c6">[email&#160;protected]</span></a><a href="tel:+33646382105">06 46 38 21 05</a></div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function parseRepo(v){
   v=v.trim().replace(/\/$/,'').replace(/^https?:\/\//,'');
   var m=v.match(/github\.com\/([^\/\s?#]+\/[^\/\s?#]+)/);
@@ -401,11 +402,4 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('repoUrl').addEventListener('keydown',function(e){if(e.key==='Enter')lancerScan();});
   document.getElementById('unlockBtn').addEventListener('click',function(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});});
   document.getElementById('submitBtn').addEventListener('click',function(){
-    if(!document.getElementById('fPrenom').value||!document.getElementById('fEmail').value){alert('Veuillez renseigner au minimum votre prénom et votre email.');return;}
-    document.getElementById('cForm').style.display='none';
-    document.getElementById('formOk').style.display='block';
-  });
-});
-</script>
-</body>
-</html>
+    if(!document.getElementById('fPrenom').value||!document.getElement
