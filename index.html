@@ -354,14 +354,16 @@ function setIco(n, s) {
   el.className = 'step-ico ' + s;
   el.textContent = s === 'done' ? '✓' : s === 'running' ? '↻' : '○';
 }
-async function fetchGH(path) {
+async function fetchGH(path) { // fixed
   const r = await fetch('https://api.github.com/' + path, {
     headers: {
       Accept: 'application/vnd.github.v3+json',
-      'X-GitHub-Api-Version': '2022-11-28'
+
     }
   });
-  if (!r.ok) throw new Error(r.status + ' - ' + path);
+  if (r.status === 403) throw new Error('Limite API. Réessayez dans quelques minutes.');
+  if (r.status === 404) throw new Error('Repository introuvable.');
+  if (!r.ok) throw new Error('Erreur ' + r.status);
   return r.json();
 }
 function compute(commits) {
